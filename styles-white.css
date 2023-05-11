@@ -1,0 +1,136 @@
+
+/* set page size for print-pdf benefit */
+@page {
+  size: A4 portrait;
+}
+
+/* add diagonal gradient to the background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      60deg,
+      transparent 8%,
+      white 20%,
+      white 70%,
+      transparent 84%
+      ),
+    repeating-linear-gradient(
+      -30deg,
+      rgb(235, 235, 235),
+      rgb(235, 235, 235) 3cm,
+      black 3cm,
+      black 6cm
+      );
+  z-index: -1;
+}
+
+/* Add a white border to the poster */
+.poster {
+  padding: 20px;
+  position: absolute;
+}
+
+.logo-container {
+  background: rgb(139, 139, 139);
+  position: absolute;
+  height: 3cm;
+  width: 3cm;
+  left: -5.5cm;
+  top: 1cm;
+}
+
+.title-container {
+  background: rgb(15, 15, 15);
+  position: absolute;
+  height: 3.8cm;
+  width: 8cm;
+  left: -8cm;
+  top: 4.5cm;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.title-text {
+  color: white;
+  font-family: Impact;
+  margin: 0;
+  padding: 0;
+}
+
+.title-1 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 42px;
+}
+
+.title-2 {
+  margin: 0;
+  padding: 0;
+  font-size: 64px;
+}
+
+.match-details-container {
+  font-family: Georgia;
+  position: absolute;
+  height: 2cm;
+  width: 8cm;
+  left: -8cm;
+  top: 8.5cm;
+  text-align: center;
+}
+
+.match-details-text {
+  color: rgb(20, 20, 20);
+}
+
+.details-1 {
+  font-size: 28px;
+}
+
+.details-2 {
+  font-size: 20px;
+}
+
+/* Format the list of player names */
+.player-list {
+  font-family: Georgia;
+  font-size: 28px;
+  color: black;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  position: absolute;
+  top: 8cm;
+  left: 1cm;
+  width: 6cm;
+}
+
+/* Format the player name with their number */
+.player-list li:before {
+  content: attr(data-num) ": ";
+  font-weight: bold;
+}
+
+/* Set a different color for every other player name to make them stand out */
+.player-list li:nth-child(even) {
+  color: rgb(85, 85, 85);
+}
+
+/* Center the poster horizontally and vertically */
+.poster-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+li {
+  margin: 14px;
+}
